@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2&display=swap" rel="stylesheet">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Arsenal FK</title>
+    <link rel="stylesheet" href="{% static 'css/news.css' %}">
+</head>
+<body>
+    <div id="block-body">
+        <header>
+
+            <div class="top-menu">
+                <ul>
+                    <li><a href="/"><i class="fas fa-sticky-note" style='font-size:24px'></i> Расписание</a></li>
+                    <li><a href="{% url 'add' %}"><i class="fas fa-user-plus" style='font-size:24px'></i> Заявки</a></li>
+                    <li><a href="{% url 'compose' %}"><i class="fab fa-untappd fa-xs" style='font-size:24px'></i> Состав</a></li>
+                    <li><a href="/"><i class='fas fa-futbol' style='font-size:24px'></i>  Новости</a></li>
+                </ul>
+            </div>
+
+            <div class="block-top-auth">
+                <p><a href="{% url 'cabinet' %}">Кабинет</a></p>
+                <p><a href="#">Регистрация</a></p>
+            </div>
+        </header>
+    </div>
+
+    {% block content %}
+    {% endblock %}
+
+
+</body>
+</html>

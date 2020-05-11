@@ -1,0 +1,38 @@
+{% extends 'main.html' %}
+{% block content %}
+{% load static %}
+<div class="block-main">
+    <div class="block-player">
+        <div class="block-stat">
+            <p><h4>{{ player.player_name }}
+            {{ player.player_sur_name }}</h4></p>
+            <ul>
+                <li>
+                    <p><a><strong>Возраст - {{ player.player_age }}</strong> лет</a></p>
+                    <p><a><strong>Состав - {{ player.player_compose }}</strong></a></p>
+                    <p><a><strong>Позиция - {{player.player_position}}</strong></a></p>
+                    <p><a><strong>GK - {{ player.player_GK }}</strong></a></p>
+                    <p><a><strong>ATK - {{ player.player_ATK }}</strong></a></p>
+                    <p><a><strong>MID - {{ player.player_MID }}</strong></a></p>
+                    <p><a><strong>DEF - {{ player.player_DEF }}</strong></a></p>
+                </li>
+            </ul>
+        </div>
+        <div class="block-img">
+            <img src="{{player.player_image.url}}" alt="My Image" width="300px">
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock%}

@@ -1,0 +1,30 @@
+{% extends 'main.html' %}
+{% block content %}
+{% load static %}
+{% for new in news %}
+    <div class="card">
+        <div class="card_header">
+            <div class="profile_image">
+
+            </div>
+
+            <div class="post_info">
+                <div class="post_name"><h2><a href="">{{ new.news_title }}</a></h2></div>
+                <div class="post_date"><p>Опубликовано: {{ new.news_date }}</p></div>
+                <div class="post_text"><p>{{ new.news_text|linebreaksbr }}</p>
+                    <div class="post_likes">
+                        <img src="{{new.news_image.url}}" alt="My Image" width="100%">
+                        <img src="{% static 'like.jpg' %}" width="25px" height="25px">Понравилось: {{ new.news_likes }}
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="post_options"></div>
+        </div>
+        <div class="post_image">
+
+        </div>
+    </div>
+
+  {% endfor %}
+{% endblock %}

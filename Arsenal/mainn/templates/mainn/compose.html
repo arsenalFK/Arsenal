@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+{% block content %}
+{% load static %}
+
+<div class="compose-1">
+    <div class="compose-2">
+        <a href="{% url 'compose_2' %}"><h3>Второй состав</h3><img src="{% static '2.jpg' %}" width="240px"></a>
+    </div>
+    <div class="compose-3">
+        <a href="{% url 'compose_1' %}"><h3>Первый состав</h3><img src="{% static '3.jpg' %}" width="240px"></a>
+    </div>
+</div>
+
+
+
+
+{% endblock%}

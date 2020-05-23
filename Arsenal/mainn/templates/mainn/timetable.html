@@ -1,0 +1,29 @@
+{% extends 'main.html' %}
+{% block content %}
+{% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/core/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/daygrid/main.css' %}">
+
+    <script src="{% static 'js/core/main.js' %}"></script>
+    <script src="{% static 'js/daygrid/main.js' %}"></script>
+
+    <script>
+
+      document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          plugins: [ 'dayGrid' ]
+        });
+
+        calendar.render();
+      });
+
+    </script>
+
+
+   <div id="calendar" style="color:white"></div>
+
+
+{% endblock %}

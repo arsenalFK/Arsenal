@@ -173,7 +173,13 @@ header {
 }
 
 .form {
+    background-image: url(../img/form.jpg);
     background-color: #FAF0E6;
+    margin: 0 auto;
+    width: 814px;
+    height: auto;
+    border: .8px solid #ccc;
+    border-radius: 4px;
 }
 
 

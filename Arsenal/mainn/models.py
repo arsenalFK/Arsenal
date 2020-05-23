@@ -1,6 +1,7 @@
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
 
+
 class News(models.Model):
     class Meta:
         ordering = ['news_date']
@@ -15,17 +16,17 @@ class News(models.Model):
 
 class Player(models.Model):
 
-    TYPE_GOALKEEPER = 1
-    TYPE_DEFENDER = 2
-    TYPE_MIDFIELDER = 3
-    TYPE_FORWARD = 4
-    TYPE_CHANGE = 5
-    TYPE_MIDFIELDER2 = 6
+    TYPE_GOALKEEPER = 'Вратарь'
+    TYPE_DEFENDER = 'Защитник'
+    TYPE_MIDFIELDER_DEF = 'Полузащита'
+    TYPE_MIDFIELDER_ATK = 'Полунападение'
+    TYPE_FORWARD = 'Нападающий'
+    TYPE_CHANGE = 'Замена'
     TYPE_CHOICES = (
         (TYPE_GOALKEEPER, 'Вратарь'),
         (TYPE_DEFENDER, 'Защитник'),
-        (TYPE_MIDFIELDER, 'Полузащитник'),
-        (TYPE_MIDFIELDER2, 'Полунападающий'),
+        (TYPE_MIDFIELDER_ATK, 'Полунападающий'),
+        (TYPE_MIDFIELDER_DEF, 'Полузащитник'),
         (TYPE_FORWARD, 'Нападающий'),
         (TYPE_CHANGE, 'На замене'),
     )
@@ -35,7 +36,7 @@ class Player(models.Model):
     player_sur_name = models.CharField(max_length=255, help_text='Фамилия игрока', verbose_name='Фамилия игрока')
     player_age = models.SmallIntegerField(help_text='Возраст', verbose_name='Возраст')
     player_compose = models.ForeignKey('Compose', on_delete=models.CASCADE, default=1, help_text='Состав (I/II)', verbose_name='Состав')
-    player_position = models.PositiveSmallIntegerField(choices=TYPE_CHOICES, default=TYPE_CHANGE, help_text='Позиция', verbose_name='Игровая позиция')
+    player_position = models.CharField(max_length=13, choices=TYPE_CHOICES, default=TYPE_CHANGE, help_text='Позиция', verbose_name='Игровая позиция')
     player_GK = models.SmallIntegerField(validators=[MinValueValidator(1), MaxValueValidator(99)], verbose_name='Вратарь',
                                          help_text='Показатель голкипера (мин - 1, макс - 99)')
     player_ATK = models.SmallIntegerField(validators=[MinValueValidator(1), MaxValueValidator(99)], verbose_name='Нападение',

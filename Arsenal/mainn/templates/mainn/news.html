@@ -1,6 +1,7 @@
 {% extends 'main.html' %}
 {% block content %}
 {% load static %}
+<h3><a style="color:white" href="{% url 'add_n' %}">Добавить</a></h3>
 {% for new in news %}
     <div class="card">
         <div class="card_header">
@@ -13,7 +14,9 @@
                 <div class="post_date"><p>Опубликовано: {{ new.news_date }}</p></div>
                 <div class="post_text"><p>{{ new.news_text|linebreaksbr }}</p>
                     <div class="post_likes">
+                        {% if new.news_image %}
                         <img src="{{new.news_image.url}}" alt="My Image" width="100%">
+                        {% endif %}
                         <img src="{% static 'like.jpg' %}" width="25px" height="25px">Понравилось: {{ new.news_likes }}
                     </div>
                 </div>

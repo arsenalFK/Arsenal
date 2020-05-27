@@ -4,10 +4,11 @@
 
 <div class="team">
     <div class="team-player">
-    {% for a in team %}
-    <a href="{% url 'p_info' pk=a.pk %}"> <p style="color:#FFFAFA">{{a.player_sur_name}}
-        {{a.player_name}}</p></a>
-    {% endfor %}
+        {% for a in team %}
+            <a href="{% url 'p_info' pk=a.pk %}">{% if a.player_img %}<img src="{{ a.player_img.url }}" width="100px">
+            <strong>{{a.player_sur_name}} {{a.player_name}}</strong></a>
+        {% endif %}
+        {% endfor %}
     </div>
 </div>
 {% endblock%}

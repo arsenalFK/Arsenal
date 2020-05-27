@@ -32,6 +32,7 @@ class Player(models.Model):
     )
 
     player_image = models.ImageField(null=True, blank=True, help_text='Фото', verbose_name='Добавить фото')
+    player_img = models.ImageField(null=True)
     player_name = models.CharField(max_length=255, help_text='Имя игрока', verbose_name='Имя игрока')
     player_sur_name = models.CharField(max_length=255, help_text='Фамилия игрока', verbose_name='Фамилия игрока')
     player_age = models.SmallIntegerField(help_text='Возраст', verbose_name='Возраст')

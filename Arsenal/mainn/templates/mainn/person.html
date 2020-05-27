@@ -1,10 +1,20 @@
 {% extends 'main.html' %}
 {% block content %}
 {% load static %}
-<h1 style="color:white">СДЕЛАТЬ ТАБЛИЦУ</h1>
-<p style="color:white">{{ per.player_request_name }}</p>
-<p style="color:white">{{ per.player_request_name2 }}</p>
-<p style="color:white">{{ per.player_request_age }}</p>
-<p style="color:white">{{ per.player_request_contacts }}</p>
+<h1 style="color:#FAF0E6" align="center">ЗАЯВКА</h1>
+<table class="person_table" border="3px" bgcolor="#111">
+    <tr class="person-top">
+        <td><h1>Имя</h1></td>
+        <td><h1>Фамилия</h1></td>
+        <td><h1>Возраст</h1></td>
+        <td><h1>Контакты</h1></td>
+    </tr>
+    <tr class="person-content">
+        <td>{{ per.player_request_name }}</td>
+        <td>{{ per.player_request_name2 }}</td>
+        <td>{{ per.player_request_age }}</td>
+        <td>{{ per.player_request_contacts }}</td>
+    </tr>
+</table>
 
 {% endblock %}

@@ -3,9 +3,27 @@
 {% load static %}
 
 
-<p><a href="{% url 'all_requests' %}">Заявки</a></p>
-<p><a href="{% url 'all_players' %}">Все игроки</a></p>
-<p><a href="{% url 'add_player' %}">Добавить игрока</a></p>
+{% if user.is_staff %}
+<ul>
+    <li><a style="color:white">Пользователь: {{user.first_name}} {{user.last_name}}</a></li>
+</ul>
+
+<div class="cabinet-img">
+    <a href="{% url 'all_players' %}"><img src="{% static '7.jpg' %}" width="90px" height="105px">
+    <p>Все Игроки</p></a>
+    <a href="{% url 'all_requests' %}"><img src="{% static '1234.jpg' %}" width="90px" height="105px">
+    <p>Все Заявки</p></a>
+    <a href="{% url 'add_player' %}"><img src="{% static '9.jpg' %}" width="90px" height="105px">
+    <p>Добавить Игрока</p></a>
+</div>
+
+
+{% else %}
+<p style="color:white" align="center">У Вас нет доступа к этой странице.</p>
+{% endif %}
+
+
+
 
 
 

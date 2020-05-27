@@ -109,7 +109,11 @@ header {
 .team {
     background-image: url(../img/1563231552177070542.jpg);
     height: 900px;
-    text-align:left;
+    }
+
+
+.team-player a {
+    color: black;
 }
 
 .block-main {
@@ -183,8 +187,82 @@ header {
 }
 
 
+.form-m {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.7);
+}
+
+.form-m h1 {
+    margin: 30px 100px;
+    padding: 0;
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+    text-transform: uppercase;
+}
 
 
+.form-m form {
+    margin: 15px 40px;
+    text-align: center;
+    padding: 10px;
+    color: #fff;
+    font-size: 20px;
+    background: none;
+    box-sizing: border-box;
+}
+
+.form-m [type="submit"] {
+    margin-top: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    color: #fff;
+    background: #111;
+    transition: .3s;
+}
+
+.form-m [type="submit"]:hover {
+    color: aqua;
+}
 
 
+.person_table {
+    margin: auto;
+    text-align: center;
+    border: 3px solid white;
+    color: #FAF0E6;
+}
 
+.person-top {
+    border: 3px solid white;
+}
+
+.person-content {
+    height: 100px;
+}
+
+.cabinet-img {
+    display: flex;
+    flex-wrap: wrap;
+    width: 840px;
+    margin: 0 auto;
+    white-space: nowrap;
+    text-align: left;
+}
+
+.cabinet-img img {
+    display: block;
+    margin: 5px;
+    white-space: nowrap;
+}
+
+.cabinet-img p {
+    display: block;
+    margin: 5px;
+    width: 200px;
+    color: #fff;
+}

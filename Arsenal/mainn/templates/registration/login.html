@@ -1,0 +1,70 @@
+{% extends 'main.html' %}
+{% block content %}
+{% load static %}
+
+
+<!--<div class="container">
+    <a class="list"><strong><h1>Войти в учетную запись</h1></strong></a>
+        <form method="post">
+            {% csrf_token%}
+            {{ form.as_p }}
+            <button type="submit"> Логин</button>
+        </form>
+</div><-->
+
+
+
+
+
+<div class="form-m">
+    <h1>Вход</h1>
+        <form class="form-l" method="post">
+            {% csrf_token%}
+            {{ form.as_p }}
+            <button type="submit">Войти</button>
+        </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!--<div class="form">
+    <h1>Вход</h1>
+        <div class="input-form">
+           <input type="text" placeholder="Логин">
+        </div>
+        <div class="input-form">
+            <input type="password" placeholder="Пароль">
+        </div>
+    <div class="input-form">
+        <input type="submit" value="Войти">
+    </div>
+    <a href="#" class="forget">Забыли пароль? </a>
+
+</div><-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

@@ -1,7 +1,13 @@
 {% extends 'main.html' %}
 {% block content %}
 {% load static %}
-<h3><a style="color:white" href="{% url 'add_n' %}">Добавить</a></h3>
+
+
+{% if user.is_staff %}
+    <h4><a style="color:white" href="{% url 'add_n' %}">Добавить Пост</a></h4>
+    <h4><a style="color:white" href="{% url 'logout' %}">Выйти</a></h4>
+{% endif %}
+
 {% for new in news %}
     <div class="card">
         <div class="card_header">
@@ -12,11 +18,13 @@
             <div class="post_info">
                 <div class="post_name"><h2><a href="">{{ new.news_title }}</a></h2></div>
                 <div class="post_date"><p>Опубликовано: {{ new.news_date }}</p></div>
+
+                {% if new.news_image %}
+                    <img src="{{new.news_image.url}}" alt="My Image" width="100%">
+                {% endif %}
+
                 <div class="post_text"><p>{{ new.news_text|linebreaksbr }}</p>
                     <div class="post_likes">
-                        {% if new.news_image %}
-                        <img src="{{new.news_image.url}}" alt="My Image" width="100%">
-                        {% endif %}
                         <img src="{% static 'like.jpg' %}" width="25px" height="25px">Понравилось: {{ new.news_likes }}
                     </div>
                 </div>

@@ -110,8 +110,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = '/home/arsenal/arsenal.pythonanywhere.com/Football/Arsenal/static'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-    '\Football\Arsenal\static'
+    os.path.join(BASE_DIR, "static")
 ]
 
 MEDIA_URL = '/media/'

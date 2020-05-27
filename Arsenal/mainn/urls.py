@@ -21,6 +21,7 @@ urlpatterns = [
     path('cabinet/all_requests/<int:pk>/', views.person, name='person'),
     path('cabinet/all_players/', AllTeamView.as_view(), name='all_players'),
     path('cabinet/add_player/', views.add_pl, name='add_player'),
+    path('cabinet/contacts/', views.contacts, name='contacts'),
 
     #ЗАЯВКИ#
 

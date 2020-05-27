@@ -112,7 +112,10 @@ def add_pl(request):
             'form': form
         })
 
-
+def contacts(request):
+    return render(request, 'mainn/contacts.html',{
+        contacts:'contacts'
+    })
 
 
         #ЗАЯВКИ-BUTTON#

@@ -3,17 +3,18 @@
 {% load static %}
 
 
-{% if user.is_staff %}
-    <h4><a style="color:white" href="{% url 'add_n' %}">Добавить Пост</a></h4>
-    <h4><a style="color:white" href="{% url 'logout' %}">Выйти</a></h4>
-{% endif %}
+
 
 {% for new in news %}
-    <div class="card">
-        <div class="card_header">
-            <div class="profile_image">
+    <div id="card">
 
-            </div>
+        {% if user.is_staff %}
+            <h5><a style="color:white" href="{% url 'add_n' %}">Добавить Пост</a></h5>
+            <h5><a style="color:white" href="{% url 'logout' %}">Выйти</a></h5>
+        {% endif %}
+
+        <div class="card_header">
+            <div class="profile_image"></div>
 
             <div class="post_info">
                 <div class="post_name"><h2><a href="">{{ new.news_title }}</a></h2></div>

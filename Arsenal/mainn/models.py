@@ -1,18 +1,20 @@
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
+from tinymce import HTMLField
 
 
 class News(models.Model):
     class Meta:
         ordering = ['news_date']
     news_title = models.CharField(max_length=255, verbose_name='Заголовок')
-    news_text = models.TextField(verbose_name='Текст')
+    news_text = HTMLField(verbose_name='Текст')
     news_date = models.DateTimeField(auto_now_add=True)
     news_likes = models.IntegerField(default=0)
     news_image = models.ImageField(null=True, blank=True, verbose_name='Добавить изображение')
 
     def __str__(self):
         return self.news_title
+
 
 class Player(models.Model):
 
@@ -48,6 +50,8 @@ class Player(models.Model):
                                           help_text='Показатель защиты (мин - 1, макс - 99)')
     def __str__(self):
         return self.player_sur_name
+
+# get_player_position_display()
 
 class Compose(models.Model):
 

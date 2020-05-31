@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.utils.safestring import mark_safe
-from django.views.generic import TemplateView, ListView
+from django.views.generic import TemplateView, ListView, CreateView
 
 from .forms import PlayerRequestForm, AddPlayerForm, AddNForm
 from .models import News, Player, PlayerRequest
@@ -14,14 +14,13 @@ class NewsView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data()
         news = News.objects.all().order_by('-news_date')
-        context.update(
-            {'news':news}
-        )
+        context['news'] = news
         return context
+
 
 def add_n(request):
     if request.method == 'POST':
-        form = AddNForm(request.POST)
+        form = AddNForm(request.POST, request.FILES)
         if form.is_valid():
             add_news = form.save()
             add_news.save()
@@ -48,6 +47,7 @@ class TeamView(TemplateView):
         )
         return context
 
+
 class TeamView2(TemplateView):
     template_name = 'mainn/team2.html'
 
@@ -58,6 +58,7 @@ class TeamView2(TemplateView):
             {'team':team}
         )
         return context
+
 
 class AllTeamView(TemplateView):
     template_name = 'mainn/all_team.html'
@@ -70,8 +71,10 @@ class AllTeamView(TemplateView):
         })
         return context
 
+
 def compose(request):
     return render(request, 'mainn/compose.html', {'compose':compose})
+
 
 def player_info(request, pk):
     player = get_object_or_404(Player, pk=pk)
@@ -92,6 +95,7 @@ class AllRequestsView(TemplateView):
         })
         return context
 
+
 def person(request, pk):
     per = get_object_or_404(PlayerRequest, pk=pk)
     return render(request, 'mainn/person.html', {'per':per})
@@ -99,18 +103,24 @@ def person(request, pk):
 def cabinet(request):
     return render(request, 'mainn/cabinet.html', {cabinet:'cabinet'})
 
-def add_pl(request):
-    if request.method == 'POST':
-        form = AddPlayerForm(request.POST)
-        if form.is_valid():
-            add_player = form.save()
-            add_player.save()
-            return redirect('all_players')
-    else:
-        form = AddPlayerForm
-        return render(request, 'mainn/add_player.html', {
-            'form': form
-        })
+
+class AddPlayer(CreateView):
+    template_name = 'mainn/add_player.html'
+    model = Player
+    fields = '__all__'
+
+# def add_pl(request):
+#     if request.method == 'POST':
+#         form = AddPlayerForm(request.POST)
+#         if form.is_valid():
+#             add_player = form.save()
+#             add_player.save()
+#             return redirect('all_players')
+#     else:
+#         form = AddPlayerForm
+#         return render(request, 'mainn/add_player.html', {
+#             'form': form
+#         })
 
 def contacts(request):
     return render(request, 'mainn/contacts.html',{

@@ -3,7 +3,7 @@
 {% load static %}
 
 
-<form method="POST" class="post-form" style="color:white"> {% csrf_token %}
+<form method="POST" class="post-form" style="color:white" enctype="multipart/form-data"> {% csrf_token %}
     {{ form.as_p }}
     <button type="submit" style="color:white" class="save-btn btn default">Добавить</button>
 </form>

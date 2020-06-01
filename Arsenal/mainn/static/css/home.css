@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(../img/body2.jpg);
+}
+
+.home-block {
+    width: 450px;
+    margin: 0 auto;
+}
+
+.home-page {
+    width: 1050px;
+    color: BLACK;
+    margin: 0 auto;
+    height: 900px;
+    background-image: url(../img/3d_23-2148403778.jpg);
+}
+
+.home-welcome {
+    text-align: center;
+}
+.home-welcome a p {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 23px;
+}
+

@@ -1,20 +1,29 @@
 {% extends 'main.html' %}
 {% block content %}
 {% load static %}
-
-
-<!--<div class="container">
-    <a class="list"><strong><h1>Войти в учетную запись</h1></strong></a>
-        <form method="post">
-            {% csrf_token%}
-            {{ form.as_p }}
-            <button type="submit"> Логин</button>
-        </form>
-</div><-->
+<link rel="stylesheet" href="{% static 'css/log.css' %}">
 
 
 
+{% if user.is_staff %}
+<ul>
+    <li><a style="color:white">Пользователь: {{user.first_name}} {{user.last_name}}</a></li>
+    <h5><a style="color:white" href="{% url 'logout' %}">Выйти</a></h5>
+</ul>
 
+<div class="cabinet-img">
+    <a href="{% url 'all_players' %}"><img src="{% static '7.jpg' %}" width="90px" height="105px">
+    <p>Все Игроки</p></a>
+    <a href="{% url 'all_requests' %}"><img src="{% static '1234.jpg' %}" width="90px" height="105px">
+    <p>Все Заявки</p></a>
+    <a href="{% url 'add_player' %}"><img src="{% static '9.jpg' %}" width="90px" height="105px">
+    <p>Добавить Игрока</p></a>
+    <a href="{% url 'contacts' %}"><img src="{% static '10.png' %}" width="90px" height="105px">
+    <p>Контакты</p></a>
+</div>
+
+{% else %}
+<p style="color:white">У Вас нет доступа к этой странице. </p>
 
 <div class="form-m">
     <h1>Вход</h1>
@@ -24,6 +33,9 @@
             <button type="submit">Войти</button>
         </form>
 </div>
+
+{% endif %}
+
 
 
 

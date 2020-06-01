@@ -4,31 +4,32 @@
 }
 
 body {
-    background-image: url(../img/body2.jpg);
+    background: linear-gradient(to right, rgba(47,55,72,0.7), rgba(36,66,126,0.7));
+    font-family: 'Exo 2', sans-serif;
+    background-image: url(../img/m5.jpg);
 }
 
 #block-body {
-    width: 1250px;
     margin: 0 auto;
     height: auto;
 }
 
 header {
-    width: 1250px;
     height: 114px;
+    margin: 0 auto;
     background-image: url(../img/ex.jpg);
 }
 
 .logo {
-    width: 175px;
+    width: 155px;
     float: left;
-    height: 114px;
+    height: 54px;
 }
 
 .logo a {
     display: block;
     margin-top: 10px;
-    margin-left: 15px;
+    margin-left: 22px;
     font-size: 23px;
     font-family: 'Exo 2', sans-serif;
     color: white;
@@ -64,7 +65,7 @@ header {
 
 .logo p {
     color:aliceblue;
-    margin-top: 20px;
+    text-align: center;
     margin-left: 17px;
     color: cornsilk;
     height: auto;
@@ -107,7 +108,7 @@ header {
 }
 
 .top-auth {
-    width: 320px;
+    width: 170px;
     height: 80px;
     float: right;
     text-align: center;
@@ -137,7 +138,6 @@ header {
 
 #card {
     background-image: url(../img/m5.jpg);
-    width: 1250px;
     height: auto;
     margin: 0 auto;
     margin-top: 15px;
@@ -183,7 +183,7 @@ header {
 }
 
 .block-main {
-    width: 950px;
+
     margin: 0 auto;
     margin-top: 15px;
     height: 500px;
@@ -244,6 +244,8 @@ header {
     height: 35%;
 
 }
+
+
 
 .post-form {
     width: 1250px;
@@ -364,3 +366,5 @@ header {
     margin: 0 auto;
     margin-top: 15px;
 }
+
+

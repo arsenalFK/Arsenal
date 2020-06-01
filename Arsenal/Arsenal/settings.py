@@ -14,7 +14,7 @@ SECRET_KEY = '*fszmxf9x=@ea&onf0h)0@m2t(n(==isz4v7ujzk#i9p19jq+0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','arsenal.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'arsenal.pythonanywhere.com']
 
 
 # Application definition
@@ -26,6 +26,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'bootstrap4',
+    'tinymce',
     'mainn',
 ]
 

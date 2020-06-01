@@ -7,6 +7,12 @@ from .forms import PlayerRequestForm, AddPlayerForm, AddNForm
 from .models import News, Player, PlayerRequest
 
 
+def home (request):
+    return render(request, 'mainn/home.html', {
+        home: 'home'
+    })
+
+
 #НОВОСТИ-BUTTON#
 class NewsView(TemplateView):
     template_name = 'mainn/news.html'
@@ -21,7 +27,7 @@ class NewsView(TemplateView):
 
 def add_n(request):
     if request.method == 'POST':
-        form = AddNForm(request.POST)
+        form = AddNForm(request.POST, request.FILES)
         if form.is_valid():
             add_news = form.save()
             add_news.save()
@@ -101,7 +107,7 @@ def cabinet(request):
 
 def add_pl(request):
     if request.method == 'POST':
-        form = AddPlayerForm(request.POST)
+        form = AddPlayerForm(request.POST, request.FILES)
         if form.is_valid():
             add_player = form.save()
             add_player.save()
@@ -125,7 +131,7 @@ def add(request):
 
 def add_to_team(requrest):
     if requrest.method == 'POST':
-        form = PlayerRequestForm(requrest.POST)
+        form = PlayerRequestForm(requrest.POST, requrest.FILES)
         if form.is_valid():
             playerrequest = form.save()
             playerrequest.save()

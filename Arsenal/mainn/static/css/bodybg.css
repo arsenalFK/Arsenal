@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(to right, rgba(47,55,72,0.7), rgba(36,66,126,0.7)), url(../img/m5.jpg);
+    font-family: 'Exo 2', sans-serif;
+}
+
+#card {
+    height: auto;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+
+.card_header {
+    background-color: #FAF0E6;
+    margin: 0 auto;
+    border: .8px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+
+.navbar{
+    background: linear-gradient(to right, rgba(47,55,72,0.7), rgba(9,12,26,-9.7)), url(../img/ex.jpg);
+}
+

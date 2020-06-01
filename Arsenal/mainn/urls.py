@@ -5,6 +5,7 @@ from .views import NewsView, TeamView, TeamView2, AllRequestsView, AllTeamView
 
 urlpatterns = [
     #НОВОСТИ + СОСТАВ#
+    #path('', views.home, name='home'),
     path('', NewsView.as_view(), name='news'),
     path('add_news/', views.add_n, name='add_n'),
     path('team/', views.compose, name='compose'),

@@ -6,6 +6,7 @@
 {% if user.is_staff %}
 <ul>
     <li><a style="color:white">Пользователь: {{user.first_name}} {{user.last_name}}</a></li>
+    <h5><a style="color:white" href="{% url 'logout' %}">Выйти</a></h5>
 </ul>
 
 <div class="cabinet-img">
@@ -21,7 +22,8 @@
 
 
 {% else %}
-<p style="color:white" align="center">У Вас нет доступа к этой странице.</p>
+<p style="color:white">У Вас нет доступа к этой странице. <a href="{% url 'login' %}"> Войти</a>
+ </p>
 {% endif %}
 
 

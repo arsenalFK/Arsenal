@@ -120,3 +120,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 LOGIN_REDIRECT_URL = 'cabinet'
 LOGOUT_REDIRECT_URL = '/'
+
+MIN_PLAYER_AGE = 14
+MAX_PLAYER_AGE = 61

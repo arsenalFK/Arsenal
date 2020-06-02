@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link href="https://fonts.googleapis.com/css?family=Exo+2&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&display=swap" rel="stylesheet">
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'css/logo.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bodybg.css' %}">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
@@ -17,62 +19,82 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
     <title>Arsenal FK</title>
-
-    <link rel="stylesheet" href="{% static 'css/logo.css' %}">
-    <link rel="stylesheet" href="{% static 'css/bodybg.css' %}">
 </head>
 <body>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0f163b;">
+                <a class="navbar-brand" href="/">
+                    <div class="logo">
+                    <a href="/">
+                        <span class="a1">A</span><span class="rs">RS</span><span class="en">EN</span><span class="a2">A</span><span class="l">L</span> <span class="fk">FK</span></a>
+                    </div>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0f163b;">
-    <a class="navbar-brand" href="/">
-        <div class="logo">
-            <a href="/">
-                <span class="a1">A</span><span class="rs">RS</span><span class="en">EN</span><span class="a2">A</span><span class="l">L</span> <span class="fk">FK</span></a>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{% url 'news' %}"><i class='fas fa-futbol' style='font-size:24px'></i>  Новости <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item dropdown active">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fab fa-untappd fa-xs" style='font-size:24px'></i>  Наша Команда
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{% url 'compose' %}">Состав</a>
+                                <a class="dropdown-item" href="#">Медиа</a>
+                                <a class="dropdown-item" href="#">ФанКлуб</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{% url 'add' %}">Оставить заявку</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown active">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarTimetable" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-sticky-note" style='font-size:24px'></i>  Матчи
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{% url 'timetable' %}">Календарь/Расписание</a>
+                                <a class="dropdown-item" href="http://elitturnir.info/turnirnaya-tablica/">Турнирная сетка лиги</a>
+                            </div>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{% url 'login' %}"><i class="fas fa-chart-line" style="font-size: 26px"></i>  Кабинет <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'contacts' %}" tabindex="-1" aria-disabled="true"><i class="fas fa-envelope-square" style="font-size: 26px"></i>  Контакты</a>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
+
+<!-------------------------------------------------------СЛАЙДЫ--------------------------------------------------------->
+<!-------------------------------------------------------СЛАЙДЫ--------------------------------------------------------->
+
+
+
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{% static 'article2-1-555x400.png' %}"alt="...">
         </div>
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="{% url 'news' %}"><i class='fas fa-futbol' style='font-size:24px'></i>  Новости <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item dropdown active">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fab fa-untappd fa-xs" style='font-size:24px'></i>  Наша Команда
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{% url 'compose' %}">Состав</a>
-                    <a class="dropdown-item" href="#">Медиа</a>
-                    <a class="dropdown-item" href="#">ФанКлуб</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="{% url 'add' %}">Оставить заявку</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown active">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarTimetable" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-sticky-note" style='font-size:24px'></i>  Матчи
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{% url 'timetable' %}">Календарь/Расписание</a>
-                    <a class="dropdown-item" href="http://elitturnir.info/turnirnaya-tablica/">Турнирная сетка лиги</a>
-                </div>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="{% url 'login' %}"><i class="fas fa-chart-line" style="font-size: 26px"></i>  Кабинет <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'contacts' %}" tabindex="-1" aria-disabled="true"><i class="fas fa-envelope-square" style="font-size: 26px"></i>  Контакты</a>
-            </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        <div class="carousel-item">
+            <img src="{% static 'IMG_20191223_190139.jpg' %}" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'raspisanie.jpg' %}"alt="...">
+        </div>
     </div>
-</nav>
+</div>
+
+
     <div class="container">
         <div class="row">
             {% block content %} {% endblock content %}

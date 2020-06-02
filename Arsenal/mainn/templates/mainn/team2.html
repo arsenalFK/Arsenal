@@ -2,13 +2,25 @@
 {% block content %}
 {% load static %}
 
-<div class="team">
-    <div class="team-player">
-        {% for a in team %}
-            <a href="{% url 'p_info' pk=a.pk %}">{% if a.player_img %}<img src="{{ a.player_img.url }}" width="100px">
-            <strong>{{a.player_sur_name}} {{a.player_name}}</strong></a>
-        {% endif %}
-        {% endfor %}
+{% for a in team %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    {% if a.player_image %}<img src="{{ a.player_image.url }}" width="150px">{% endif %}
+                    <h5 class="card-title"><strong><a class="name">Имя________________  {{a.player_name}}</a></strong></h5>
+                    <h5 class="card-title"><strong><a class="surname">Фамилия__________  {{a.player_sur_name}}</a></strong></h5>
+                    <p class="card-text">Возраст___________________  {{ a.player_age }}</p>
+                    <p class="card-text">Дата рождения__________  --</p>
+                    <p class="card-text">Игровая позиция________  {{a.player_position}}</p>
+                    <p class="card-text">Рост________  --</p>
+                    <p class="card-text">Вес________  --</p>
+                    <a href="#" class="btn btn-primary">Подробнее...</a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+{% endfor %}
 {% endblock%}

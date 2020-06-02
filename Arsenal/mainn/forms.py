@@ -10,6 +10,18 @@ class PlayerRequestForm(forms.ModelForm):
         model = PlayerRequest
         fields = '__all__'
 
+    def __init__(self, *args, **kwargs):
+        super(PlayerRequestForm, self).__init__(*args, **kwargs)
+
+        choices = [[None, '----']]
+        for x in range(settings.MIN_PLAYER_AGE, settings.MAX_PLAYER_AGE):
+            choices.append([x, x])
+
+        self.fields['player_request_age'].widget = forms.widgets.Select(
+         #choices=[[None, '----']] + [[x, x] for x in range(14, 61)]
+        choices=choices
+        )
+
 class AddPlayerForm(forms.ModelForm):
     class Meta:
         model = Player

@@ -1,14 +1,14 @@
 .logo {
-    width: 125px;
+    width: 162px;
     float: left;
     height: 71px;
 }
 
 .logo a {
-    margin-top: -9px;
+    margin-top: 12px;
     padding: 0;
     display: block;
-    font-size: 27px;
+    font-size: 29px;
     font-family: 'Exo 2', sans-serif;
     color: white;
     cursor: pointer;
@@ -38,6 +38,6 @@
 
 .fk {
     color:red;
-    margin-left: 40px;
-    font-size: 27px;
+
+    font-size: 29px;
 }

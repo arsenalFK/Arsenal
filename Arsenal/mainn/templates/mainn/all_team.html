@@ -1,11 +1,13 @@
 {% extends 'main.html' %}
 {% block content %}
 {% load static %}
+
 <div class="all-players">
     {% for a in all %}
         <a href="{% url 'p_info' pk=a.pk %}"> <p style="color:#FFFAFA">{{a.player_sur_name}}
                 {{a.player_name}}</p></a>
     {% endfor %}
 </div>
+
 
 {% endblock%}

@@ -7,24 +7,20 @@
     <div class="row">
         <div class="col-sm-12">
             <div id="carding">
-                <div class="media-body">
-                    {% if user.is_staff %}
-                        <h5><a href="{% url 'add_n' %}">Добавить Пост</a></h5>
-                    {% endif %}
+                {% if user.is_staff %}
+                    <h5><a href="{% url 'add_n' %}">Добавить Пост</a></h5>
+                {% endif %}
 
-                    <div class="card">
-                        <div class="post_info">
-                            <div class="post_name"><h2><a href="">{{ new.news_title }}</a></h2></div>
-                            <div class="post_date">Опубликовано: {{ new.news_date }}</p></div>
-                            <div class="media">
-                                {% if new.news_image %}
-                                <img src="{{new.news_image.url}}" alt="My Image" width="100%">
-                                {% endif %}
-                                <div class="post_text"><p>{{ new.news_text|safe|linebreaksbr|safe }}</p>
-                                    <div class="post_likes">
-                                        <img src="{% static 'like.jpg' %}" width="25px" height="25px">Понравилось: {{ new.news_likes }}
-                                    </div>
-                                </div>
+                <div class="card">
+                    <div class="post_info">
+                        <div class="post_name"><h2><a href="">{{ new.news_title }}</a></h2></div>
+                        <div class="post_date">Опубликовано: {{ new.news_date }}</p></div>
+                        {% if new.news_image %}
+                        <img src="{{new.news_image.url}}" alt="My Image" width="100%">
+                        {% endif %}
+                        <div class="post_text"><p>{{ new.news_text|safe|linebreaksbr|safe }}</p>
+                            <div class="post_likes">
+                                <img src="{% static 'like.jpg' %}" width="25px" height="25px">Понравилось: {{ new.news_likes }}
                             </div>
                         </div>
                     </div>

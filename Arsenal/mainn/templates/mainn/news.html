@@ -18,7 +18,7 @@
                         {% if new.news_image %}
                         <img src="{{new.news_image.url}}" alt="My Image" width="100%">
                         {% endif %}
-                        <div class="post_text"><p>{{ new.news_text|safe|linebreaksbr|safe }}</p>
+                        <div class="post_text"><p>{{ new.news_text|linebreaksbr|safe }}</p>
                             <div class="post_likes">
                                 <img src="{% static 'like.jpg' %}" width="25px" height="25px">Понравилось: {{ new.news_likes }}
                             </div>

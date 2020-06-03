@@ -77,6 +77,13 @@ class AllTeamView(TemplateView):
         })
         return context
 
+class Fan(TemplateView):
+    template_name = 'mainn/fan.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data()
+        return context
+
 def compose(request):
     return render(request, 'mainn/compose.html', {'compose':compose})
 

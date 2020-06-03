@@ -5,17 +5,17 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
-            <div class="card">
+            <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
                 <div class="card-body">
-                    {% if a.player_image %}<img src="{{ a.player_image.url }}" width="150px">{% endif %}
-                    <h5 class="card-title"><strong><a class="name">Имя________________  {{a.player_name}}</a></strong></h5>
-                    <h5 class="card-title"><strong><a class="surname">Фамилия__________  {{a.player_sur_name}}</a></strong></h5>
-                    <p class="card-text">Возраст___________________  {{ a.player_age }}</p>
-                    <p class="card-text">Дата рождения__________  --</p>
-                    <p class="card-text">Игровая позиция________  {{a.player_position}}</p>
-                    <p class="card-text">Рост________  --</p>
-                    <p class="card-text">Вес________  --</p>
-                    <a href="#" class="btn btn-primary">Подробнее...</a>
+                    {% if a.player_image %}<a href="{% url 'p_info' pk=a.pk %}"><img src="{{ a.player_image.url }}" width="175px"></a>{% endif %}
+                    <h5 class="card-title"><strong>Фамилия<a>{{ a.player_sur_name }}</a></strong></h5>
+                    <h5 class="card-title"><strong>Имя<a>{{ a.player_name }}</a></strong></h5>
+                    <p class="card-text">Игровая позиция<a>{{ a.player_position }}</a></p>
+                    <p class="card-text">Дата рождения<a>{{ a.birth }}</a></p>
+                    <p class="card-text">Возраст<a>{{ a.player_age }}</a></p>
+                    <p class="card-text">Рост<a>{{ a.height }}</a></p>
+                    <p class="card-text">Вес<a>{{ a.weight }}</a></p>
+                    <a href="{% url 'p_info' pk=a.pk %}" class="btn btn-primary">Подробнее...</a>
                 </div>
             </div>
         </div>

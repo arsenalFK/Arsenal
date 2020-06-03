@@ -13,20 +13,24 @@ class PlayerRequestForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(PlayerRequestForm, self).__init__(*args, **kwargs)
 
-        choices = [[None, '----']]
-        for x in range(settings.MIN_PLAYER_AGE, settings.MAX_PLAYER_AGE):
-            choices.append([x, x])
-
         self.fields['player_request_age'].widget = forms.widgets.Select(
-         #choices=[[None, '----']] + [[x, x] for x in range(14, 61)]
-        choices=choices
+        choices=[[None, '----']] + [[x, x] for x in range(14, 61)]
         )
 
 class AddPlayerForm(forms.ModelForm):
     class Meta:
         model = Player
-        fields = ['player_image', 'player_name', 'player_sur_name', 'player_age', 'player_compose', 'player_position',
-                  'player_GK', 'player_ATK', 'player_MID', 'player_DEF']
+        fields = '__all__'
+
+    def __init__(self, *args, **kwargs):
+        super(AddPlayerForm, self).__init__(*args, **kwargs)
+
+        self.fields['height'].widget = forms.widgets.Select(
+            choices=[[None, '---']] + [[i, i] for i in range(140, 221)]
+        )
+        self.fields['weight'].widget = forms.widgets.Select(
+            choices=[[None, '---']] + [[i, i] for i in range(0, 160)]
+        )
 
 class AddNForm(forms.ModelForm):
     class Meta:

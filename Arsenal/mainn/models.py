@@ -35,16 +35,19 @@ class Player(models.Model):
     player_img = models.ImageField(null=True)
     player_name = models.CharField(max_length=255, help_text='Имя игрока', verbose_name='Имя игрока')
     player_sur_name = models.CharField(max_length=255, help_text='Фамилия игрока', verbose_name='Фамилия игрока')
+    birth = models.DateField(null=True)
     player_age = models.SmallIntegerField(help_text='Возраст', verbose_name='Возраст')
     player_compose = models.ForeignKey('Compose', on_delete=models.CASCADE, default=1, help_text='Состав (I/II)', verbose_name='Состав')
     player_position = models.CharField(max_length=13, choices=TYPE_CHOICES, default=TYPE_CHANGE, help_text='Позиция', verbose_name='Игровая позиция')
-    player_GK = models.SmallIntegerField(validators=[MinValueValidator(1), MaxValueValidator(99)], verbose_name='Вратарь',
+    weight = models.SmallIntegerField(default=0, null=True)
+    height = models.SmallIntegerField(default=0, null=True)
+    yellow = models.SmallIntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(99)], verbose_name='Желтые карточки',
                                          help_text='Показатель голкипера (мин - 1, макс - 99)')
-    player_ATK = models.SmallIntegerField(validators=[MinValueValidator(1), MaxValueValidator(99)], verbose_name='Нападение',
+    red = models.SmallIntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(99)], verbose_name='Красные карточки',
                                           help_text='Показатель нападения (мин - 1, макс - 99)')
-    player_MID = models.SmallIntegerField(validators=[MinValueValidator(1), MaxValueValidator(99)], verbose_name='Полузащита',
+    missed = models.SmallIntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(99)], verbose_name='Пропущено матчей',
                                           help_text='Показатель полузащиты (мин - 1, макс - 99)')
-    player_DEF = models.SmallIntegerField(validators=[MinValueValidator(1), MaxValueValidator(99)], verbose_name='Защита',
+    goals = models.SmallIntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(99)], verbose_name='Забито голов',
                                           help_text='Показатель защиты (мин - 1, макс - 99)')
     def __str__(self):
         return self.player_sur_name

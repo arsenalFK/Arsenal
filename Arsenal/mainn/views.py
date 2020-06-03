@@ -54,6 +54,7 @@ class TeamView(TemplateView):
         )
         return context
 
+
 class TeamView2(TemplateView):
     template_name = 'mainn/team2.html'
 

@@ -7,21 +7,14 @@
   <div class="col-sm-12">
     <div class="card">
       <div class="card-body">
-        <img src="{{player.player_image.url}}" alt="My Image" width="150px">
-        <h5 class="card-title"><strong><p class="name">Имя________{{ player.player_name }}</p></strong></h5>
-        <h5 class="card-title"><strong><p class="surname">Фамилия__________{{ player.player_sur_name }}</p></strong></h5>
-        <p class="card-text">Возраст________{{ player.player_age }}</p>
-        <p class="card-text">Дата рождения________--</p>
-        <p class="card-text">Игровая позиция________{{player.player_position}}</p>
-        <p class="card-text">Рост________--</p>
-        <p class="card-text">Вес________--</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <h5 class="card-title"><strong><p>Забитых голов - {{ player.goals }}</p></strong></h5>
+        <h5 class="card-title"><strong><p>Пропущено матчей - {{ player.missed }}</p></strong></h5>
+        <h5 class="card-title"><strong><p><img src="{% static '54c0cacc51f01.jpg' %}" width="48px"> - {{ player.yellow }}</p></strong></h5>
+        <h5 class="card-title"><strong><p><img src="{% static 'kart2.png' %}" width="48px"> - {{ player.red }}</p></strong></h5>
       </div>
     </div>
   </div>
 </div>
-
-
 
 
 

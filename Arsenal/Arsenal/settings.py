@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bootstrap4',
     'mainn',
+
 ]
 
 MIDDLEWARE = [
@@ -57,6 +58,8 @@ TEMPLATES = [
         },
     },
 ]
+
+
 
 WSGI_APPLICATION = 'Arsenal.wsgi.application'
 

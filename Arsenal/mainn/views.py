@@ -84,6 +84,13 @@ class Fan(TemplateView):
         context = super().get_context_data()
         return context
 
+class TeamMedia(TemplateView):
+    template_name = 'mainn/media.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data()
+        return context
+
 def compose(request):
     return render(request, 'mainn/compose.html', {'compose':compose})
 

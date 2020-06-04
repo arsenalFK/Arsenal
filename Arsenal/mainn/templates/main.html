@@ -48,7 +48,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{% url 'compose' %}">Состав</a>
-                                <a class="dropdown-item" href="#">Медиа</a>
+                                <a class="dropdown-item" href="{% url 'team_media' %}">Медиа</a>
                                 <a class="dropdown-item" href="{% url 'fan' %}">ФанКлуб</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{% url 'add' %}">Оставить заявку</a>
@@ -120,6 +120,9 @@
             {% block content %} {% endblock content %}
         </div>
     </div>
+        </div>
+    </div>
+</div>
 </body>
 
 </html>

@@ -14,11 +14,11 @@
                 <div class="card">
                     <div class="post_info">
                         <div class="post_name"><h2><a href="">{{ new.news_title }}</a></h2></div>
-                        <div class="post_date">Опубликовано: {{ new.news_date }}</p></div>
                         {% if new.news_image %}
                         <img src="{{new.news_image.url}}" alt="My Image" width="100%">
                         {% endif %}
                         <div class="post_text"><p>{{ new.news_text|linebreaksbr|safe }}</p>
+                            <div class="post_date">Опубликовано: <strong>{{ new.news_date }}</strong></p></div>
                             <div class="post_likes">
                                 <img src="{% static 'like.jpg' %}" width="25px" height="25px">Понравилось: {{ new.news_likes }}
                             </div>

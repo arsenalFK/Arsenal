@@ -48,26 +48,16 @@ class TeamView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data()
-        team = Player.objects.all().filter(player_compose=1)
+        team = Player.objects.all()
         context.update(
             {'team':team}
         )
         return context
 
 
-class TeamView2(TemplateView):
-    template_name = 'mainn/team2.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data()
-        team = Player.objects.all().filter(player_compose=2)
-        context.update(
-            {'team':team}
-        )
-        return context
 
 class AllTeamView(TemplateView):
-    template_name = 'mainn/all_team.html'
+    template_name = 'mainn/team.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data()

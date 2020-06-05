@@ -1,16 +1,14 @@
 from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import path
 from . import views
-from .views import NewsView, TeamView, TeamView2, AllRequestsView, AllTeamView, Fan, TeamMedia
+from .views import NewsView, TeamView, AllRequestsView, AllTeamView, Fan, TeamMedia
 
 urlpatterns = [
     #НОВОСТИ + СОСТАВ#
     #path('', views.home, name='home'),
     path('', NewsView.as_view(), name='news'),
     path('add_news/', views.add_n, name='add_n'),
-    path('team/', views.compose, name='compose'),
     path('team/compose/', TeamView.as_view(), name='compose_1'),
-    path('team/compose2/', TeamView2.as_view(), name='compose_2'),
     path('team/compose/<int:pk>/', views.player_info, name='p_info'),
     path('team/compose/fan/', Fan.as_view(), name='fan'),
     path('team/compose/media/', TeamMedia.as_view(), name='team_media'),

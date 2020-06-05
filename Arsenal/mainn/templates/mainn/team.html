@@ -13,8 +13,8 @@
                     <p class="card-text">Игровая позиция<a>{{ a.player_position }}</a></p>
                     <p class="card-text">Дата рождения<a>{{ a.birth }}</a></p>
                     <p class="card-text">Возраст<a>{{ a.player_age }}</a></p>
-                    <p class="card-text">Рост<a>{{ a.height }}</a></p>
-                    <p class="card-text">Вес<a>{{ a.weight }}</a></p>
+                    <p class="card-text">Рост<a>{{ a.height }} см</a></p>
+                    <p class="card-text">Вес<a>{{ a.weight }} кг</a></p>
                     <a href="{% url 'p_info' pk=a.pk %}" class="btn btn-primary">Подробнее...</a>
                 </div>
             </div>

@@ -10,7 +10,7 @@
                     {% if a.player_image %}<a href="{% url 'p_info' pk=a.pk %}"><img src="{{ a.player_image.url }}" width="175px"></a>{% endif %}
                     <h5 class="card-title"><strong>Фамилия<a>{{ a.player_sur_name }}</a></strong></h5>
                     <h5 class="card-title"><strong>Имя<a>{{ a.player_name }}</a></strong></h5>
-                    <p class="card-text">Игровая позиция<a>{{ a.player_position }}</a></p>
+                    <p class="card-text">Позиция<a>{{ a.player_position }}</a></p>
                     <p class="card-text">Дата рождения<a>{{ a.birth }}</a></p>
                     <p class="card-text">Возраст<a>{{ a.player_age }}</a></p>
                     <p class="card-text">Рост<a>{{ a.height }} см</a></p>
